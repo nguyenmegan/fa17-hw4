@@ -1,0 +1,34 @@
+
+<h2>Cats</h2>
+
+<% @cats.each do |cat| %>
+    <%= cat.name %></br>
+<% end %>
+</br>
+
+
+<h2>Todos</h2>
+
+<% @todos.each do |todo| %>
+    <%= todo.tasks %>, 
+    <%= todo.finished %></br>
+<% end %>
+<%= form_for :todo, url:todos_path do |f| %>
+  <%= f.label :tasks %>:
+  <%= f.text_field :tasks %><br />
+
+  <%= f.label :finished %>:
+  <%= f.text_field :finished %><br />
+
+  <%= f.submit %>
+<% end %>
+</br>
+
+<h2>Users</h2>
+
+<% @users.each do |user| %>
+    Username: <%= user.username %>,
+    Email: <%= user.email %>, 
+    Age: <%= user.age %>
+<% end %>
+
